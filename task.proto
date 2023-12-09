@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package gTaskmanager;
+
+service TaskService {
+    rpc CreateTask(TaskDetails) returns (ID) {}
+    rpc GetTask(ID) returns (TaskDetails) {}
+    rpc UpdateTask(TaskDetails) returns (ID) {}
+    rpc DeleteTask(ID) returns (ID) {}
+    rpc ListTasks(Empty) returns (stream TaskDetails) {}
+}
+
+enum TaskStatus {
+    PROCESSED = 0;
+    DISCREPANCY = 1;
+    COMPLETED = 2;
+}
+
+message Empty {}
+
+message ID {
+    int32 taskId = 1;
+}
+
+message TaskDetails {
+    ID taskId = 1;
+    string taskTitle = 2;
+    string description = 3;
+    TaskStatus status = 4;
+    string dueDate = 5;
+}
+
+
