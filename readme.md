@@ -20,7 +20,7 @@ Make sure you have the following tools installed on your system:
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/TaskManager.git
+git clone https://github.com/hrushikesh009/gPRC.git
 cd TaskManager
 ```
 ### Install Dependencies
